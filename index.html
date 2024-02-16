@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kxr.veru</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            position: relative;
+            background-image: url('https://wallpapers.com/images/hd/purple-aesthetic-pictures-ioe10ldym1bxxoin.jpg');
+            background-size: cover;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://wallpapers.com/images/hd/purple-aesthetic-pictures-ioe10ldym1bxxoin.jpg');
+            background-size: cover;
+            filter: blur(7px);
+            z-index: -1;
+        }
+
+        #veru {
+            background-color: rgba(7, 8, 22, 0.5); /* 50% translucent blue */
+            padding: 20px; /* Adjust padding as needed */
+            border-radius: 50px; /* Rounded corners for the background */
+            z-index: 1;
+            overflow: hidden; /* Ensures content doesn't overflow the container */
+            text-align: center;
+            color: #FFD700; /* Set the color to gold (change as needed) */
+        }
+
+        #veru img {
+            max-width: 100%; /* Set maximum width to 100% */
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        audio {
+            width: 100%;
+            background: transparent; /* Make the background transparent */
+            display: none; /* Hide default audio controls */
+        }
+
+        .play-button, .stop-button{
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            outline: none;
+            font-size: 24px;
+            margin: 0 10px;
+        }
+
+        .play-button{
+            color: #94939379; /* Set the color to green (change as needed) */
+        }
+
+        .stop-button {
+            color: #94939379; /* Set the color to red (change as needed) */
+        }
+    </style>
+</head>
+<body>
+    <div id="veru">
+        <img src="https://discord.c99.nl/widget/theme-4/1204924807511154690.png" alt="Veru Discord Widget">
+        <button class="play-button" onclick="playAudio()">▶</button>
+        <button class="stop-button" onclick="stopAudio()">Stop</button>
+        <audio id="audio" controls autoplay>
+            <source src="https://cdn.discordapp.com/attachments/1205239294239842385/1207873761626431498/kingvonxd.mp3?ex=65e13b19&is=65cec619&hm=49a4a251840d8f5519ef3fda3b26ce61c301e8f4328f5db3c393f8e8ee45f5ea&" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </div>
+
+    <script>
+        function playAudio() {
+            var audio = document.getElementById('audio');
+            audio.play();
+        }
+
+        function stopAudio() {
+            var audio = document.getElementById('audio');
+            audio.pause();
+            audio.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
